@@ -90,12 +90,12 @@ public class ClienteController {
 				.map(cliente -> { //no map faremos o processo de atualização, o obj cliente-> e as informaçoes do cliente que foi encontrado no dba
 					cliente.setNome(clienteAtualizado.getNome());//atualizaremos o nome
 					cliente.setCpf(clienteAtualizado.getCpf());//atualizaremos o cpf
-					return repository.save(clienteAtualizado);
+					return repository.save(cliente);
 				})//caso nao encontremos o cliente lançaremos a exception abaixo NOT_FOUND = STATUS 404 - NOT_FUND
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "cliente nao encontrado para ser atualizado"));
 	}
 	
-	@GetMapping()
+	@GetMapping //obrigador a por para mapear metodo
 	public List<Cliente> listarClientes(){
 		return repository.findAll();
 	}

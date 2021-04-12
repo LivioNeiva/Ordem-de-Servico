@@ -1,4 +1,4 @@
-package com.livioneiva.rest.exception;
+package com.livioneiva.rest;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
+
+import com.livioneiva.rest.exception.ApiErrors;
 
 /* 
  * vamos fazer um tratamento de erros na api, para mapear a resposta quando a validação ocorrer
